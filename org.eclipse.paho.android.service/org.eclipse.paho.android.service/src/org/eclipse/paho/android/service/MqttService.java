@@ -811,7 +811,7 @@ public class MqttService extends Service implements MqttTraceHandler {
 	 */
 	public boolean isOnline() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-		if (cm.getActiveNetworkInfo() != null
+		if (cm != null && cm.getActiveNetworkInfo() != null
 				&& cm.getActiveNetworkInfo().isAvailable()
 				&& cm.getActiveNetworkInfo().isConnected()
 				&& backgroundDataEnabled) {
